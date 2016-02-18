@@ -4,16 +4,31 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
   </head>
   <body ng-controller="mainCtrl">
     <div class="main-container">
-      <h1> DevMountain Chat Room </h1>
+      <div class="header-wrapper">
+      <h1> DevMountain Chat </h1>
+    </div>
+    <div class="input-wrapper">
       <form ng-submit="postData()">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
-      </form>
-      <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.text}} </p>
+        <div class="msg-wrapper">
+        <input class="form-control text-box box button" type="text" ng-model="message" placeholder="Message"><button type="submit" class="btn button">Submit</button>
       </div>
+        
+        <input class="form-control text-box box" type="text" ng-model="filterMessage" placeholder="Search by Message">
+
+
+        
+      </form>
+    </div>
+
+      <div class="messages-container">
+        <p class="message" ng-repeat="message in messages | filter: filterMessage"> {{message.text}} <span="timestamp"> {{message.createdAt | format}}</span></p> 
+      </div>
+     
     </div>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
@@ -21,5 +36,6 @@
     <script src="js/mainCtrl.js"></script>
     <script src="js/parseService.js"></script>
     <script src="js/defaultHeaders.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
   </body>
 </html>

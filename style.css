@@ -6,16 +6,18 @@ html {
 body {
   height: 95%;
   width: 100%;
-  font-family: sans-serif;
-  background-image: url('http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg');
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #003835;
+  background-image: url('img/shattered-dark.png');
 }
 
 .main-container {
   width: 75%;
   margin: 10px auto;
   background: rgba(255, 255, 255, 0.86);
-  padding: 5px;
+  padding: 0;
   border-radius: 10px;
+
 }
 
 .main-container h1 {
@@ -25,10 +27,54 @@ body {
 .text-box {
   margin: 0px auto;
   width: 40%;
+
 }
 
-p{
+.input-wrapper {
+  margin-bottom: 10px;
+}
+.box {
+  margin-top: 10px;
+}
+
+.messages-container {
   text-align: center;
-  margin: 3px 0;
+  margin: 0 auto !important;
   font-size: 17px;
+  width: 70%;
+  background-color: #fff;
+}
+
+.header-wrapper {
+  background-image: url('img/headerbackground2.jpg');
+  height: 300px;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+h1 {
+  text-align:center;
+  line-height:300px;
+  height:300px;
+  margin: 0;
+  font-family: 'Carter One', sans-serif;
+  color: #fff;
+  font-size: 5em;
+  text-shadow: 2px 2px #4B4C4D;
+
+}
+
+.message {
+  border: 1px solid #ddd;
+}
+
+.msg-wrapper {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
 }
